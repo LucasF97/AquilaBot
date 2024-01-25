@@ -7,6 +7,7 @@ function isOptional<T,E>(val: Result<T,E> | Optional<T>): val is Optional<T> {
 }
 //dit geeft een error dat T niet returned wordt maar dit klopt niet
 // code compiled wel en die T is nodig
+// @ts-ignore
 export function $try<T,E>(val: Result<T,E> | Optional<T>): T{
     $$escape!(()=> {
         if (isOptional(val)){
